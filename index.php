@@ -13,12 +13,20 @@ define('CORE',ROOT.'/core');
 define('APP',ROOT.'/app');
 define('MODULE','app');
 define('DEBUG',true);
+
+require "vendor/autoload.php";
 if (DEBUG){
+    $whoops = new \Whoops\Run;
+    //$errorTitle = "¿ò¼Ü³ö´íÁË";
+    $option = new \Whoops\Handler\PrettyPageHandler();
+    //$option->setPageTitle($errorTitle);
+    $whoops->pushHandler($option);
+    $whoops->register();
     ini_set('display_errors','On');
 }else {
     ini_set('display_errors','Off');
 }
-
+//dump($_SERVER);exit;
 require CORE.'/common/functions.php';
 require CORE.'/main.php';
 spl_autoload_register('\core\main::load');
