@@ -24,6 +24,7 @@ class main
             throw new \Exception('ÕÒ²»µ½¿ØÖÆÆ÷'.$ctlClass);
         }
     }
+    
     public static function load($class)
     {
         if(isset($class_map[$class])){
@@ -39,5 +40,22 @@ class main
 			}
 		}
         
+    }
+    
+    public function assign($name,$value)
+    {
+    
+        $this->assign[$name] = $value;
+    }
+    
+    public function display($file)
+    {
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            //p($this->assign);exit;
+            extract($this->assign);
+            require $file;
+        }
+    
     }
 }
