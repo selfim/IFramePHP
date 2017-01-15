@@ -11,7 +11,7 @@ class indexCtrl extends \core\main
 //         p($res->fetchAll());  
         $tmp = \core\libs\config::get('ACT','route');
         $model = new \core\libs\model();
-        p($model);
+       
         $data = 'hello';
         $this->assign('data',$data);
         $this->display('index.html');

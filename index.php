@@ -5,6 +5,9 @@
  * 2.¼ÓÔØº¯Êý¿â
  * 3.Æô¶¯¿ò¼Ü
  */
+//define('DS', DIRECTORY_SEPARATOR);
+//define('ROOT_PATH', __DIR__ . DS);
+
 define('ROOT',dirname(realpath(__FILE__)));
 define('CORE',ROOT.'/core');
 define('APP',ROOT.'/app');

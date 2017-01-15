@@ -9,6 +9,8 @@ class main
     public static $class_map = array();
     public static function run()
     {
+        \core\libs\log::init();
+        #\core\libs\log::log('test');
         $route = new \core\libs\route();
         //p($route);
         $ctlClass =$route->controller;
@@ -20,6 +22,7 @@ class main
             require  $ctlFile;
             $ctl = new $cltlClass();
             $ctl->$act();
+            \core\libs\log::log('controller:'.$ctlClass.'   '.'action:'.$act);
         }else{
             throw new \Exception('ÕÒ²»µ½¿ØÖÆÆ÷'.$ctlClass);
         }
