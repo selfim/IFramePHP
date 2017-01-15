@@ -10,7 +10,19 @@ class main
     public static function run()
     {
         $route = new \core\libs\route();
-        p($route);
+        //p($route);
+        $ctlClass =$route->controller;
+        $act = $route->action;
+        $ctlFile = APP.'/controller/'.$ctlClass.'Ctrl.php';
+        //p($ctlFile);exit;
+        $cltlClass = '\\'.MODULE.'\controller\\'.$ctlClass.'Ctrl';
+        if(is_file($ctlFile)){
+            require  $ctlFile;
+            $ctl = new $cltlClass();
+            $ctl->$act();
+        }else{
+            throw new \Exception('ÕÒ²»µ½¿ØÖÆÆ÷'.$ctlClass);
+        }
     }
     public static function load($class)
     {

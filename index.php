@@ -8,7 +8,7 @@
 define('ROOT',dirname(realpath(__FILE__)));
 define('CORE',ROOT.'/core');
 define('APP',ROOT.'/app');
-
+define('MODULE','app');
 define('DEBUG',true);
 if (DEBUG){
     ini_set('display_errors','On');
