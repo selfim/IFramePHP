@@ -1,4 +1,7 @@
 <?php
+/**
+ * 框架核心入口文件
+ */
 namespace core;
 
 class main
@@ -6,8 +9,7 @@ class main
     public static $class_map = array();
     public static function run()
     {
-        p('ok');
-        $route = new \core\route();
+        $route = new \core\libs\route();
         p($route);
     }
     public static function load($class)
