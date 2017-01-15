@@ -18,4 +18,5 @@ if (DEBUG){
 
 require CORE.'/common/functions.php';
 require CORE.'/main.php';
+spl_autoload_register('\core\main::load');
 \core\main::run();
