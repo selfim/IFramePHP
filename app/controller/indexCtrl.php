@@ -21,6 +21,7 @@ class indexCtrl extends \core\main
 //        );
 //        $ids = $model->insert('msg', $data);
 //        dump($ids);
+        /**
         $model = new \app\model\msgModel();
         //$res = $model->getOne(6);
         $data = array(
@@ -30,8 +31,9 @@ class indexCtrl extends \core\main
                 );
         $res = $model->uOne(2,$data);
         dump($res);
-        //$data = 'hello';
-        //$this->assign('data',$data);
-       // $this->display('index.html');
+        */
+        $data = 'hello';
+        $this->assign('data',$data);
+        $this->display('index.html');
     }
 }

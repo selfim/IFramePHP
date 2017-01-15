@@ -53,12 +53,27 @@ class main
     
     public function display($file)
     {
+        /**
         $file = APP.'/views/'.$file;
         if(is_file($file)){
             //p($this->assign);exit;
             extract($this->assign);
             require $file;
         }
+        */
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            //p($this->assign);exit;
+            \Twig_Autoloader::register();
+            $loader = new \Twig_Loader_Filesystem('APP./views/');
+            $twig = new \Twig_Environment($loader, array(
+                'cache' => ROOT.'/log/twig',
+                'debug'=>DEBUG
+            ));
+            $template = $twig->loadTemplate ('index.html');
+            $template->display($this->assign?$this->assign:'');
+        }
+        
     
     }
 }
