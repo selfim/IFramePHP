@@ -11,6 +11,7 @@
 define('ROOT',dirname(realpath(__FILE__)));
 define('CORE',ROOT.'/core');
 define('APP',ROOT.'/app');
+define('PUBLIC',ROOT.'/public');
 define('MODULE','app');
 define('DEBUG',true);
 
