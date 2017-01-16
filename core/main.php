@@ -7,6 +7,7 @@ namespace core;
 class main
 {
     public static $class_map = array();
+    public $assign;
     public static function run()
     {
         \core\libs\log::init();
@@ -45,7 +46,7 @@ class main
         
     }
     
-    public function assign($name,$value)
+    public  function assign($name,$value)
     {
     
         $this->assign[$name] = $value;
@@ -70,8 +71,8 @@ class main
                 'cache' => ROOT.'/log/twig',
                 'debug'=>DEBUG
             ));
-            $template = $twig->loadTemplate ('index.html');
-            $template->display($this->assign?$this->assign:'');
+            $template = $twig->loadTemplate('index.html');
+            $template->display($this->assign?$this->assign:array());
         }
         
     

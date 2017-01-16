@@ -28,8 +28,14 @@ class __TwigTemplate_5a64259c214bafcf9d6c31fee420b5f1ab7bfdb1f9b38244e39e3d375de
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo twig_escape_filter($this->env, (isset($context["data"]) ? $context["data"] : null), "html", null, true);
-        echo "
+        echo "<ul>
+\t<li class=\"am-u-sm-3\">
+\t\t<h1>title</h1>
+\t\t<p>content</p>
+\t\t<p><span></span></p>
+\t\t<a href=\"\"></a>
+\t</li>
+</ul>
 ";
     }
 
@@ -61,7 +67,14 @@ class __TwigTemplate_5a64259c214bafcf9d6c31fee420b5f1ab7bfdb1f9b38244e39e3d375de
         return new Twig_Source("{% extends \"layout.html\" %}
 
 {% block content %}
-{{ data }}
+<ul>
+\t<li class=\"am-u-sm-3\">
+\t\t<h1>title</h1>
+\t\t<p>content</p>
+\t\t<p><span></span></p>
+\t\t<a href=\"\"></a>
+\t</li>
+</ul>
 {% endblock %}", "index.html", "D:\\web\\vhost\\dev.frame.com\\app\\views\\index.html");
     }
 }
